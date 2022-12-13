@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Plan</title>
+</head>
+
+<body>
+	<h1>Plan a Trip</h1>
+	<form id="f" action="/plan" method="post">
+		<fieldset>
+            <label>Name: <input type="text" name="name"/></label>
+			<label>Email Address: <input type="email" name="email"  placeholder="example@notreal.notreal"></label>
+            
+            <br><br>
+
+            <div>
+                <label>Destination: <input type="text" name="destination"/></label>
+            </div>
+
+			<br>
+
+			<div>
+                <label>From: <input type="text" name="from"/></label>
+				<label>To: <input type="text" name="to"/></label>
+            </div>
+
+            <br><br>
+
+			Travel Method:
+			<label><input type="radio" name="travelMethod" value="Car">Car</label>
+	    	<label><input type="radio" name="travelMethod" value="Plane">Plane</label>
+			<label><input type="radio" name="travelMethod" value="Train">Train</label>
+			<label><input type="radio" name="travelMethod" value="Bike">Bike</label>
+			<label><input type="radio" name="travelMethod" value="Walk">Walk</label>
+			
+			<br><br>
+
+            <div>
+                Purpose
+            </div>
+           
+			<div> 
+                <textarea rows="5" cols="80" name="purpose"></textarea>
+            </div>
+            
+            
+		</fieldset>
+
+		<br>
+		<input type="reset" />
+		<input type="submit" value="Plan Trip!"/>
+	</form>
+	<hr>
+	<a href="/">HOME</a></li>
+
+</body>
+
+</html>

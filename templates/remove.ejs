@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Remove</title>
+</head>
+
+<body>
+	<h1>Removing All Trips</h1>
+	<form action="/remove" method="post" onsubmit="verify()">
+		<input type="submit" value="Remove All Trips"/>
+	</form>
+	<hr>
+	<a href="/">HOME</a></li>
+	<script>
+		function verify() {
+			window.confirm("Are you sure you want to remove all planned trips?\n")
+		}
+	</script>
+</body>
+
+</html>
