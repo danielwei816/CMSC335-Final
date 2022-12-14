@@ -1,13 +1,9 @@
 const http = require('http');
 const ejs = require('ejs');
 const express = require('express');
-const nodemon = require('nodemon');
 const path = require("path");
-const { stdin, argv } = require('process');
-const { readFile } = require('fs');
-let fs = require('fs');
 const bodyParser = require("body-parser");
-require("dotenv").config({ path: path.resolve(__dirname, 'credentials/.env') })
+require("dotenv").config()
 
 // server initialization
 let portNumber = 3000;
