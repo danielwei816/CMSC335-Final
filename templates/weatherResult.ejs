@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Weather</title>
+	</head>
+
+	<body>
+		<h1>Weather for <%- latitude %>°N <%- longitude %>°W on <%- date %>:</h1>
+		<div>
+			<strong>Average Temperature (°F): </strong><%- temperature %><br>
+			<strong>Average Windspeed (mph): </strong><%- windspeed %><br>
+			<strong>Average Precipitation (inches): </strong><%- precipitation %><br>
+			<hr>
+            <p>
+                <i>
+                    Note: If you see an error, please ensure that your date is within 7 days of the current date.
+                    <br>
+                    Furthermore, ensure that your coordinates align with an inhabited location on land.
+                </i>
+            </p>
+            <hr>
+			<a href="/">HOME</a>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Weather Checker</title>
+</head>
+
+<body>
+	<h1>Weather Checker</h1>
+	<form action="/weather-checker" method="post">
+		<fieldset>
+			<label for="latitude">Enter latitude: </label>
+            <input id="latitude" name="latitude" type="number" min="-90" max="90" step="0.01">
+			<br><br>
+            <label for="longitude">Enter longitude: </label>
+            <input id="longitude" name="longitude" type="number" min="-180" max="180" step="0.01">
+			<br><br>
+            <label for="date">Enter a date (must be within 7 days from today): </label>
+            <input id="date" name="date" type="date">
+            <br><br> 
+		</fieldset>
+		<br>
+		<input type="reset" />
+		<input type="submit" value="Submit"/>
+	</form>
+	<hr>
+	<a href="/">HOME</a></li>
+</body>
+
+</html>
