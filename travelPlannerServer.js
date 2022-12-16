@@ -21,28 +21,6 @@ const databaseAndCollection = { db: process.env.MONGO_DB_NAME, collection: proce
 const uri = `mongodb+srv://${userName}:${password}@cluster0.u3kal6a.mongodb.net/?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
-const webServer = http.createServer((request, response) => {
-	response.writeHead(httpSuccessStatus, { 'Content-type': 'ejs' });
-	response.end();
-});
-
-console.log(`Web server is running at http://localhost:${portNumber}`);
-process.stdin.setEncoding("utf8");
-process.stdout.write("Type stop to shutdown the server: ")
-process.stdin.on('readable', () => {
-	let dataInput = process.stdin.read();
-	if (dataInput !== null) {
-		let command = dataInput.trim();
-		if (command === "stop") {
-			console.log("Shutting down the server");
-			process.exit(0);
-		} else {
-			console.log(`Invalid command: ${command}`);
-		}
-		dataInput = process.stdin.read()
-	}
-});
-
 // api endpoints
 app.get("/", (request, response) => {
 	response.render("main");
@@ -72,6 +50,7 @@ app.post("/plan", (request, response) => {
 	async function insert(client, databaseAndCollection, application) {
 		const result = await client.db(databaseAndCollection.db).collection(databaseAndCollection.collection).insertOne(application);
 	}
+
 	main().catch(console.error);
 
 	const variables = {
@@ -176,9 +155,8 @@ app.post("/weather-checker", async (request, response) => {
 		const avgPrecipitation = data.hourly.precipitation.reduce((count, temp) => count + temp, 0) / data.hourly.precipitation.length;
 		response.render("weatherResult", { latitude, longitude, temperature: avgTemp.toFixed(2), windspeed: avgWindspeed.toFixed(2), precipitation: avgPrecipitation.toFixed(2), date});
 	}
-
-
 });
 
-app.listen(portNumber);
-
+app.listen(portNumber, () => {
+	console.log(`Server is listening on port ${portNumber}.`);
+});
