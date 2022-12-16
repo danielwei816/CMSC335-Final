@@ -1,7 +1,7 @@
 ## Team Members 
 
 Mohammadzain Kazi (116485685)
-Daniel Wei ()
+Daniel Wei (117154702)
 
 ## App Description
 
@@ -12,7 +12,8 @@ We included a weather API so that the user can check the weather of potential tr
 The user can view all of their trips by submitting their email. 
 
 ## API links
-
+Weather forecast API:
+https://open-meteo.com/en/docs
 
 ## Youtube Demo Video
 
