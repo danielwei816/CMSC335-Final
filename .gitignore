@@ -124,3 +124,6 @@ dist
 .pnp.*
 
 **/.DS_Store
+
+# environment vars
+.env
