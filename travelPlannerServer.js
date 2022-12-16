@@ -19,6 +19,8 @@ const databaseAndCollection = { db: process.env.MONGO_DB_NAME, collection: proce
 const uri = `mongodb+srv://${userName}:${password}@cluster0.u3kal6a.mongodb.net/?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
+console.log(`Web server is running at http://localhost:${portNumber}`);
+
 // api endpoints
 app.get("/", (request, response) => {
 	response.render("main");
